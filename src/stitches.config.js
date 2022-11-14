@@ -7,15 +7,14 @@ export const { css, styled } = createStitches({
 
     theme: {
       colors: {
-        black: {
-          color: "rgba(0, 0, 0, 0.87)"
-        },
-        blackMedium: {
-          color: "blue"
-        },
-        blackDisable: {
-          color: "red"
-        }
+        backgroundDefault: 'white',
+        backgroundDark: 'rgba(12, 12, 12, 0.93)',
+        black: "rgba(0, 0, 0, 0.87)",
+        blackMedium: "rgba(0, 0, 0, 0.60)",
+        blackDisable: "rgba(0, 0, 0, 0.37)",
+        white: "rgba(255, 255, 255, 0.87)",
+        whiteMedium: "rgba(255, 255, 255, 0.60)",
+        whiteDisable: "rgba(255, 255, 255, 0.37)",
       },
       sizes: {
         1: "8px",
@@ -56,14 +55,6 @@ export const { css, styled } = createStitches({
         2: "14px",
         3: "16px",
         4: "18px",
-        5: "20px",
-        6: "22px",
-        7: "24px",
-        8: "28px",
-        9: "32px",
-        10: "48px",
-        11: "56px",
-        12: "64px",
       }
     },
 

@@ -4,35 +4,36 @@ import { BirthComponent } from "../src/BirthComponent";
 
 const App = () => (
   <>
-    <BirthComponent size="large" borderRadius="0" />
+    <BirthComponent legal-age="disabled"/>
     <button>enviar</button>
   </>
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
+const inputBirth = document.getElementById("input-birth");
 
-const inputBirth = document.getElementById('input-birth');
 const formControl = inputBirth.parentElement;
-const small = formControl.getElementsByTagName('h4')[0];
-const button  = document.getElementsByTagName('button')[0];
 
-button.addEventListener('click', () => {
-  console.log(inputBirth.value);
-  validateBirth( inputBirth, inputBirth.value )
-})
+const small = formControl.getElementsByTagName("h4")[0];
+const button = document.getElementsByTagName("button")[0];
+
+button.addEventListener("click", () => {
+  validateBirth(inputBirth, inputBirth.value);
+});
 
 function validateBirth(input, inputValue) {
   const dateLikeArray = inputValue.split("-");
 
   const day = dateLikeArray[2];
-  const month = dateLikeArray[1]
+  const month = dateLikeArray[1];
   const yaer = dateLikeArray[0];
 
   const leapYear = isLeapYear(yaer);
   const valideYaer = isValideYaer(yaer);
   const valideMonth = isValideMonth(month);
   const valideDay = isValideDay(day, month, leapYear);
+
 
   if (inputValue === "") {
     errorValidation(input, "Preencha esse campo");
@@ -51,79 +52,75 @@ function validateBirth(input, inputValue) {
 // Múltiplos de 4, mas que não são múltiplos de 100.
 // Todos os não múltiplos de 400 são bissextos.
 function isLeapYear(yaer) {
-  if ((yaer % 4 == 0 && yaer % 100 != 0) || yaer % 400 == 0) { 
-    return true; 
-  } 
+  const remainderOfDivisionByFourIsEqualsZero = yaer % 4 == 0;
+  const remainderOfDivisionByHundredIsDifferentFromZero = yaer % 100 != 0;
+  const remainderOfDivisionByFourHundredIsEqualsZero = yaer % 400 == 0;
 
-  return false;
+  return (remainderOfDivisionByFourIsEqualsZero &&
+    remainderOfDivisionByHundredIsDifferentFromZero) ||
+    remainderOfDivisionByFourHundredIsEqualsZero
+    ? true
+    : false;
 }
 
 // Validação do ano
 function isValideYaer(yaer) {
-  if (yaer >= 0) {
-    return true;
-  } 
-
-  return false;
+  const yaerIsEqualsOrBiggerThatZero = yaer >= 1892;
+  return yaerIsEqualsOrBiggerThatZero ? true : false;
 }
 
 // Validação do mes
 function isValideMonth(month) {
-  if (month >= 1 && month <= 12) {
-    return true;
-  } 
+  const monthIsBiggerThanOne = month >= 1;
+  const monthIsSmallerThanTwelve = month <= 12;
+  return monthIsBiggerThanOne && monthIsSmallerThanTwelve ? true : false;
 
-  return false;
 }
 
 // Validação do dia
+//
+// erro na validação de dia
+//
 function isValideDay(day, month, leapYear) {
-  if (day >= 1) {
-    if (
-      month == 1 ||
-      month == 3 ||
-      month == 5 ||
-      month == 7 ||
-      month == 8 ||
-      month == 9 ||
-      month == 10 ||
-      month == 12
-    ) {
-      if (day <= 31) { 
-        return true; 
-      }
-    } else if (month == 4 || month == 6 || month == 0 || month == 11) {
-      if (day <= 30) { 
-        return true; 
-      }
-    } else if (month == 2) {
-      if (leapYear && day <= 20) {
-        return true; 
-      }
-      else if (!leapYear && day <= 28) { 
-        return true; 
-      }
-    }
-  }
+  const January = month == 1;
+  const February = month == 2;
+  const March = month == 3;
+  const April = month == 4;
+  const May = month == 5;
+  const June = month == 6;
+  const July = month == 7;
+  const August = month == 8;
+  const September = month == 9;
+  const October = month == 10;
+  const November = month == 11;
+  const December = month == 12;
+  const dayIsSmallerOrEqualsThanThirty = day <= 30;
+  const dayIsSmallerOrEqualsThanTwentyNine = day <= 29;
+  const dayIsSmallerOrEqualsThanTwentyEight = day <= 28;
 
-  return false;
+  return (January || March || May || July || August || October || December) ? true
+  : April || June || September || November ? dayIsSmallerOrEqualsThanThirty ? true
+  : February ? leapYear && dayIsSmallerOrEqualsThanTwentyNine ? true 
+  : !leapYear && dayIsSmallerOrEqualsThanTwentyEight ? true 
+  : false
+  : false 
+  : false
+
 }
-
 
 function isFutureDate(date) {
   const currentDateIsGreatOrEqualsBirthDate = date >= new Date();
-  console.log(new Date (date) );
   return currentDateIsGreatOrEqualsBirthDate;
 }
 
 // states validation
-function errorValidation (input, message) {
+function errorValidation(input, message) {
   input.style.border = "2px solid #b00020";
-  small.style.display = 'block';
+  small.style.display = "block";
   small.innerText = message;
 }
 
-function successValidation (input) {
-  small.style.display = 'none'
+function successValidation(input) {
+  small.style.display = "none";
   input.style.border = "2px solid #4eca4e";
 }
