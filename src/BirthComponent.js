@@ -7,7 +7,7 @@ export function BirthComponent(props) {
   return (
     <>
       <FormControl>
-        <Input id="input-birth" type="date" size={props.size} radii={props.borderRadius} disable={props.disabled}/>
+        <Input id="input-birth" type="date" size={props.size} radii={props.borderRadius} disable={props.disable}/>
         <Small />
       </FormControl>
     </>

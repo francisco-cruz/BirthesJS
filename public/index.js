@@ -2,19 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BirthComponent } from "../src/BirthComponent";
 
-const App = (props) => (
-  <BirthComponent size="large" borderRadius="0" disable="disabled" />
+const App = () => (
+  <>
+    <BirthComponent size="large" borderRadius="0" />
+    <button>enviar</button>
+  </>
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
 
 const inputBirth = document.getElementById('input-birth');
-console.log(inputBirth);
 const formControl = inputBirth.parentElement;
 const small = formControl.getElementsByTagName('h4')[0];
+const button  = document.getElementsByTagName('button')[0];
 
-inputBirth.addEventListener('focusout', () => {
+button.addEventListener('click', () => {
   console.log(inputBirth.value);
   validateBirth( inputBirth, inputBirth.value )
 })

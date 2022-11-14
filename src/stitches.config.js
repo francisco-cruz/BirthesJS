@@ -8,13 +8,13 @@ export const { css, styled } = createStitches({
     theme: {
       colors: {
         black: {
-          color: "#00000087"
+          color: "rgba(0, 0, 0, 0.87)"
         },
         blackMedium: {
-          color: "#00000060"
+          color: "blue"
         },
         blackDisable: {
-          color: "#00000038"
+          color: "red"
         }
       },
       sizes: {
