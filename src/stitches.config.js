@@ -6,19 +6,26 @@ export const { css, styled } = createStitches({
   },
 
     theme: {
+      colors: {
+        black: {
+          color: "#00000087"
+        },
+        blackMedium: {
+          color: "#00000060"
+        },
+        blackDisable: {
+          color: "#00000038"
+        }
+      },
       sizes: {
         1: "8px",
         2: "12px",
         3: "16px",
         4: "20px",
-        5: "24px",
-        6: "28px",
-        7: "32px",
-        8: "36px",
-        9: "40px",
-        10: "44px",
-        11: "48px",
-        12: "52px",
+        5: '30px',
+        6: '40px',
+        7: '50px',
+        8: "100%",
       },
   
       space: {
@@ -37,12 +44,11 @@ export const { css, styled } = createStitches({
       },
   
       radii: {
-        0: "0px",
-        1: "8px",
-        2: "12px",
-        3: "16",
-        4: "24px",
-        5: "50%",
+        1: "0px",
+        2: "8px",
+        3: "12px",
+        4: "16px",
+        5: "24px",
       },
   
       fontSizes: {
@@ -66,5 +72,5 @@ export const { css, styled } = createStitches({
       bp2: "(max-width: 768px)",
       bp3: "(max-width: 1024px)",
     },
-    
+
   })

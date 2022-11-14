@@ -2,16 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BirthComponent } from "../src/BirthComponent";
 
-const App = () => (
-  <BirthComponent />
+const App = (props) => (
+  <BirthComponent size="large" borderRadius="0" disable="disabled" />
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
+
 const inputBirth = document.getElementById('input-birth');
 console.log(inputBirth);
 const formControl = inputBirth.parentElement;
-const small = formControl.getElementsByTagName('small')[0];
+const small = formControl.getElementsByTagName('h4')[0];
 
 inputBirth.addEventListener('focusout', () => {
   console.log(inputBirth.value);
@@ -114,12 +115,12 @@ function isFutureDate(date) {
 
 // states validation
 function errorValidation (input, message) {
-  input.style.border = "2px solid red";
+  input.style.border = "2px solid #b00020";
   small.style.display = 'block';
   small.innerText = message;
 }
 
 function successValidation (input) {
   small.style.display = 'none'
-  input.style.border = "2px solid green";
+  input.style.border = "2px solid #4eca4e";
 }

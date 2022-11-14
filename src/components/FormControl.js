@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "../stitches.config";
 
 export const FormControl = styled("div", {
   display: "flex",

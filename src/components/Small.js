@@ -1,8 +1,9 @@
-import { styled } from "@stitches/react";
+import { styled } from "../stitches.config";
 
-export const Small = styled("small", {
+export const Small = styled("h4", {
   display: "none",
+  fontSize: '$3',
   fontWeight: 100,
-  margin: 0,
-  color: "red",
+  margin: 3,
+  color: "#b00020",
 });
