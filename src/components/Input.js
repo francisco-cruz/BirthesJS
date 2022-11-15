@@ -1,33 +1,22 @@
 import { styled } from "../stitches.config";
 
 export const Input = styled("input", {
-  fontWeight: 700,
   width: "100%",
   boxSizing: "border-box",
   paddingLeft: 8,
   paddingRight: 8,
   outline: "none",
+  border: "1px solid $borderDefault",
+  fontWeight: 400,
+  fontFamily: "$1",
+  backgroundColor: "white",
+  color: '#102732',
+  "&:focus": {
+    border: "1px solid $borderFocus",
+    boxShadow: "$inputFocus",
+    color: "$black",
+  },
   variants: {
-    theme: {
-      default: {
-        backgroundColor: "white",
-        color: "$blackMedium",
-        border: "1px solid $blackMedium",
-        "&:focus": {
-          border: "1px solid $black",
-          color: "$black",
-        }
-      },
-      dark: {
-        backgroundColor: "$backgroundDark",
-        color: "$whiteMedium",
-        border: "1px solid $whiteMedium",
-        "&:focus": {
-          border: "1px solid $white",
-          color: "$white",
-        }
-      },
-    },
     size: {
       small: {
         height: "$5",
@@ -63,16 +52,14 @@ export const Input = styled("input", {
       },
     },
     disable: {
-      disabled: {
+      true: {
         cursor: "none",
         pointerEvents: "none",
         color: "$blackDisable",
-        opacity: ".4",
       },
     },
   },
   defaultVariants: {
-    theme: 'default',
     size: 'default',
     radii: "2"
   },

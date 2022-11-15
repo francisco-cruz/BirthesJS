@@ -4,6 +4,8 @@ export const Small = styled("h4", {
   display: "none",
   fontSize: '$3',
   fontWeight: 100,
-  marginTop: 4,
-  color: "#b00020",
+  marginTop: "0.25rem",
+  fontSize: ".875em",
+  color: "#dc3545",
+  fontFamily: "$1"
 });
