@@ -4,7 +4,7 @@ import { BirthComponent } from "../src/BirthComponent";
 
 const App = () => (
   <>
-    <BirthComponent legal-age="disabled"/>
+    <BirthComponent legalAge="enable" />
     <button>enviar</button>
   </>
 );
@@ -12,11 +12,11 @@ const App = () => (
 ReactDOM.render(<App />, document.getElementById("root"));
 
 const inputBirth = document.getElementById("input-birth");
-
 const formControl = inputBirth.parentElement;
-
 const small = formControl.getElementsByTagName("h4")[0];
 const button = document.getElementsByTagName("button")[0];
+const isLegalAge = inputBirth.getAttribute('legal-age')
+
 
 button.addEventListener("click", () => {
   validateBirth(inputBirth, inputBirth.value);
@@ -24,21 +24,20 @@ button.addEventListener("click", () => {
 
 function validateBirth(input, inputValue) {
   const dateLikeArray = inputValue.split("-");
-
   const day = dateLikeArray[2];
   const month = dateLikeArray[1];
   const yaer = dateLikeArray[0];
-
   const leapYear = isLeapYear(yaer);
   const valideYaer = isValideYaer(yaer);
   const valideMonth = isValideMonth(month);
   const valideDay = isValideDay(day, month, leapYear);
 
-
   if (inputValue === "") {
     errorValidation(input, "Preencha esse campo");
     return false;
   }
+
+  if (isLegalAge)
 
   if (isFutureDate(inputValue) || !(valideYaer && valideMonth && valideDay)) {
     errorValidation(input, "Data inválida");
@@ -74,7 +73,6 @@ function isValideMonth(month) {
   const monthIsBiggerThanOne = month >= 1;
   const monthIsSmallerThanTwelve = month <= 12;
   return monthIsBiggerThanOne && monthIsSmallerThanTwelve ? true : false;
-
 }
 
 // Validação do dia
@@ -98,14 +96,21 @@ function isValideDay(day, month, leapYear) {
   const dayIsSmallerOrEqualsThanTwentyNine = day <= 29;
   const dayIsSmallerOrEqualsThanTwentyEight = day <= 28;
 
-  return (January || March || May || July || August || October || December) ? true
-  : April || June || September || November ? dayIsSmallerOrEqualsThanThirty ? true
-  : February ? leapYear && dayIsSmallerOrEqualsThanTwentyNine ? true 
-  : !leapYear && dayIsSmallerOrEqualsThanTwentyEight ? true 
-  : false
-  : false 
-  : false
 
+  
+  return January || March || May || July || August || October || December
+    ? true
+    : April || June || September || November
+    ? dayIsSmallerOrEqualsThanThirty
+      ? true
+      : February
+      ? leapYear && dayIsSmallerOrEqualsThanTwentyNine
+        ? true
+        : !leapYear && dayIsSmallerOrEqualsThanTwentyEight
+        ? true
+        : false
+      : false
+    : false;
 }
 
 function isFutureDate(date) {
