@@ -12,7 +12,7 @@ export function BirthComponent(props) {
           type="date"
           size={props.size}
           radii={props.borderRadius}
-          disable={props.disable ?? "false"}
+          disable={props.disable}
           legal-age={props.legalAge}
         />
         <Small />
