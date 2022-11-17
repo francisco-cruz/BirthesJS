@@ -1,6 +1,4 @@
-import React from "react";
-import { Form } from "./components/Form";
+import { styled } from "./stitches.config";
 
-export default function FormBirth () {
-  < Form />
-}
+const FormBirth = styled("form", {});
+export default FormBirth;
