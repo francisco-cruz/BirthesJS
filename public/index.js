@@ -2,22 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import moment from "moment/moment";
 import { BirthComponent } from "../src/BirthComponent";
-import PropTypes from 'prop-types';
 
-BirthComponent.propTypes = {
-  size : PropTypes.string,
-  borderRadius : PropTypes.string,
-  disable: PropTypes.string,
-  legalAge: PropTypes.string
-}
-
-const App = ({size,
-  borderRadius,
-  disable,
-  legalAge}) => (
+const App = () => (
   <>
     <form>
-      <BirthComponent size="large" disable="true" borderRadius="5" />
+      <BirthComponent
+        size={"large"}
+        legalAge={"16"}
+        borderRadius={"5"}
+        disabled={""}
+      />
       <button type="subit">Enviar</button>
     </form>
   </>

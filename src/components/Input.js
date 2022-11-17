@@ -57,10 +57,15 @@ export const Input = styled("input", {
         pointerEvents: "none",
         color: "$blackDisable",
       },
+      false: {
+        cursor: "pointer",
+        color: "$blackMedium",
+      },
     },
   },
   defaultVariants: {
     size: 'default',
-    radii: "2"
+    radii: "2",
+    disable: "false"
   },
 });

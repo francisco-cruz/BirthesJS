@@ -5,6 +5,7 @@ export const { css, styled } = createStitches({
       backgroundDefault: "white",
       black: "rgba(0, 0, 0, 0.87)",
       blackMedium: "rgba(0, 0, 0, 0.60)",
+      blackDisable: "rgba(0, 0, 0, 0.37)",
       borderDefault: "#ced4da",
       borderFocus: "#0d6efd",
     },
