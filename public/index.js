@@ -1,23 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import moment from "moment/moment";
-import { BirthComponent } from "../src/BirthComponent";
+import { FormBirth } from "../src/FormBirth";
+import { InputBirth } from "../src/InputBirth";
 
 const App = () => (
-  <>
-    <form>
-      <BirthComponent
+    <FormBirth>
+      <InputBirth
         size={"large"}
-        legalAge={"16"}
+        legalAge={"12"}
         borderRadius={"5"}
         disabled={""}
       />
       <button type="subit">Enviar</button>
-    </form>
-  </>
+    </FormBirth>
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));
+
 
 const inputBirth = document.getElementById("input-birth");
 const formControl = inputBirth.parentElement;
@@ -41,17 +41,17 @@ function validateBirth(input, inputValue) {
   const validaeDate = isValideDate(day, month, yaerBirth);
 
   if (inputValue == "") {
-    errorValidation(input, "Preencha esse campo.");
+    errorValidation(input, "Fill in this field.");
     return false;
   }
 
   if (isFutureDate(inputValue) || !validaeDate || !valideYaer) {
-    errorValidation(input, "Data inválida.");
+    errorValidation(input, "Invalid date.");
     return false;
   }
 
   if (ageLegalValue !== "" && isNotLegalAge) {
-    errorValidation(input, `Proíbido para menores de ${ageLegalValue} Anos.`);
+    errorValidation(input, `Prohibited minors`);
     return false;
   }
 

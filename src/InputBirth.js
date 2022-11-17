@@ -4,9 +4,8 @@ import { Input } from "./components/Input";
 import { Small } from "./components/Small";
 import PropTypes from "prop-types";
 
-export function BirthComponent({ size, borderRadius, disabled, legalAge }) {
+export function InputBirth({ size, borderRadius, disabled, legalAge }) {
   return (
-    <>
       <FormControl>
         <Input
           id="input-birth"
@@ -30,11 +29,10 @@ export function BirthComponent({ size, borderRadius, disabled, legalAge }) {
         />
         <Small />
       </FormControl>
-    </>
   );
 }
 
-BirthComponent.propTypes = {
+InputBirth.propTypes = {
   size: PropTypes.string,
   borderRadius: PropTypes.string,
   disabled: PropTypes.string,
