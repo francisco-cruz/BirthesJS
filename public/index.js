@@ -6,12 +6,12 @@ import InputBirth  from "../src/InputBirth";
 const App = () => (
     <FormBirth>
       <InputBirth
-        size={"large"}
-        legalAge={"12"}
-        borderRadius={"5"}
+        size={""}
+        legalAge={"16"}
+        borderRadius={"2"}
         disabled={""}
       />
-      <button type="subit">Enviar</button>
+      <button type="submit">Enviar</button>
     </FormBirth>
 );
 
