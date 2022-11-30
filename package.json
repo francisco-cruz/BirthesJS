@@ -2,10 +2,10 @@
   "name": "birthsjs",
   "version": "1.3.0",
   "description": "Library for age/birth validation.",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "files": [
-    "dist",
+    "src",
     "README.md"
   ],
   "scripts": {
