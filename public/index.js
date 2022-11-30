@@ -6,7 +6,7 @@ import InputBirth  from "../src/InputBirth";
 const App = () => (
     <FormBirth>
       <InputBirth
-        size={""}
+        size={"large"}
         legalAge={"16"}
         borderRadius={"2"}
         disabled={""}
