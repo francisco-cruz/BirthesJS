@@ -58,6 +58,8 @@ function InputBirth(_ref) {
       var lowestValidYear = 1892;
       return yaer >= lowestValidYear ? true : false;
     };
+
+    // Validation of Date
     var isValideDate = function isValideDate(day, month, yaer) {
       var valideDay = (0, _moment["default"])("".concat(yaer, "/").concat(month, "/").concat(day)).format("l");
       return valideDay === "Invalid date" ? false : true;

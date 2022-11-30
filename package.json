@@ -1,6 +1,6 @@
 {
-  "name": "birthesjs",
-  "version": "1.0.2",
+  "name": "birthsjs",
+  "version": "1.0.3",
   "description": "Library for age/birth validation.",
   "main": "dist/index.js",
   "module": "dist/index.js",

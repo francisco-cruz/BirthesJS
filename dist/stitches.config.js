@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.styled = exports.css = void 0;
+exports.theme = exports.createTheme = void 0;
 var _react = require("@stitches/react");
 var _createStitches = (0, _react.createStitches)({
     theme: {
@@ -60,7 +60,7 @@ var _createStitches = (0, _react.createStitches)({
       }
     }
   }),
-  css = _createStitches.css,
-  styled = _createStitches.styled;
-exports.styled = styled;
-exports.css = css;
+  theme = _createStitches.theme,
+  createTheme = _createStitches.createTheme;
+exports.createTheme = createTheme;
+exports.theme = theme;
