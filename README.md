@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://yarnpkg.com/">
-    <img alt="Yarn" src="https://github.com/francisco-cruz/BirthsJS/blob/main/logo.png" width="546">
+  <a href="births.netlify.app">
+    <img alt="BirthsJS" src="https://github.com/francisco-cruz/BirthsJS/blob/main/logo.png" width="546">
   </a>
 </p>
 
