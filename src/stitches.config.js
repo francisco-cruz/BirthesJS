@@ -1,5 +1,5 @@
 import { createStitches } from "@stitches/react";
-export const { theme, createTheme } = createStitches({
+export const { css, styled, theme, createTheme } = createStitches({
   theme: {
     colors: {
       backgroundDefault: "white",
@@ -11,16 +11,6 @@ export const { theme, createTheme } = createStitches({
     },
     shadows: {
       inputFocus: "0 0 0px 3px #0d6efd40",
-    },
-    sizes: {
-      1: "8px",
-      2: "12px",
-      3: "16px",
-      4: "20px",
-      5: "30px",
-      6: "40px",
-      7: "50px",
-      8: "100%",
     },
     space: {
       1: "8px",
